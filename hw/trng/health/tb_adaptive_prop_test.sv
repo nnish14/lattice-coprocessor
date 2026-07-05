@@ -111,7 +111,8 @@ module tb_adaptive_prop_test;
         $display("\nTC3: Stuck-at-0, anchor=0 → alarm must fire by bit 410");
         reset_dut();
         begin
-            int alarm_cycle = -1;
+           int alarm_cycle;
+           alarm_cycle=-1;
             for (int i = 1; i <= 512; i++) begin
                 send_bit(1'b0);
                 if (alarm && alarm_cycle < 0)
@@ -127,7 +128,8 @@ module tb_adaptive_prop_test;
         $display("\nTC4: Stuck-at-1, anchor=1 → alarm must fire by bit 410");
         reset_dut();
         begin
-            int alarm_cycle = -1;
+            int alarm_cycle;
+            alarm_cycle = -1;
             for (int i = 1; i <= 512; i++) begin
                 send_bit(1'b1);
                 if (alarm && alarm_cycle < 0)

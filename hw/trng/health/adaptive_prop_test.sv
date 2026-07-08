@@ -24,9 +24,9 @@ module adaptive_prop_test (
     localparam int unsigned W_BITS = $clog2(W + 1);
     localparam int unsigned B_BITS = $clog2(C + 1);
 
-    // NIST SP (S → anchor, B → match_count).
-    logic              S;  // first bit of the current window (NIST: S)
-    logic [B_BITS-1:0] B; // number of bits matching anchor   (NIST: B)
+    // NIST SP (S → anchor, B → match_count) for readability.
+    logic              anchor;      // first bit of the current window (NIST: S)
+    logic [B_BITS-1:0] match_count; // number of bits matching anchor   (NIST: B)
     logic [W_BITS-1:0] pos;
     logic              first_bit;
 

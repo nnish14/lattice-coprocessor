@@ -61,7 +61,7 @@ module adaptive_prop_test (
             first_bit <= 1'b1;
         end
 
-        else if (bit_valid && !alarm_lat) begin
+        else if (bit_valid && !alarm_lat && !alarm_comb) begin
 
             if (first_bit) begin
                 S         <= bit_in;

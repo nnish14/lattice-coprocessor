@@ -75,10 +75,8 @@ module adaptive_prop_test (
 
                 pos <= pos + 1'b1;
 
-                if (pos == W_BITS'(W)) begin
+                if (pos == W_BITS'(W-1)) begin
                     first_bit <= 1'b1;
-                    B         <= '0;
-                    pos       <= '0;
                 end
             end
         end
